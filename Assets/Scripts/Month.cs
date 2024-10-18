@@ -5,7 +5,8 @@ using UnityEngine;
 public class Month : MonoBehaviour
 {
     // Zona de variables globales
-    public int MonthNumber;
+    [SerializeField]
+    private int _monthNumber;
 
     // Start is called before the first frame update
     void Start()
@@ -13,61 +14,61 @@ public class Month : MonoBehaviour
         IsMonthName();
     }
 
-    // Método "Nombre del mes"
+    // Método para mostrar por consola el mes correspondiente al número
     private void IsMonthName()
     {
-        switch (MonthNumber)
+        switch (_monthNumber)
         {
             case 1:
-                Debug.Log("'" + MonthNumber + "' corresponde a Enero");
+                Debug.Log("'" + _monthNumber + "' corresponde a Enero");
                 break;
 
             case 2:
-                Debug.Log("'" + MonthNumber + "' corresponde a Febero");
+                Debug.Log("'" + _monthNumber + "' corresponde a Febero");
                 break;
 
             case 3:
-                Debug.Log("'" + MonthNumber + "' corresponde a Marzo");
+                Debug.Log("'" + _monthNumber + "' corresponde a Marzo");
                 break;
 
             case 4:
-                Debug.Log("'" + MonthNumber + "' corresponde a Abril");
+                Debug.Log("'" + _monthNumber + "' corresponde a Abril");
                 break;
 
             case 5:
-                Debug.Log("'" + MonthNumber + "' corresponde a Mayo");
+                Debug.Log("'" + _monthNumber + "' corresponde a Mayo");
                 break;
 
             case 6:
-                Debug.Log("'" + MonthNumber + "' corresponde a Junio");
+                Debug.Log("'" + _monthNumber + "' corresponde a Junio");
                 break;
 
             case 7:
-                Debug.Log("'" + MonthNumber + "' corresponde a Julio");
+                Debug.Log("'" + _monthNumber + "' corresponde a Julio");
                 break;
 
             case 8:
-                Debug.Log("'" + MonthNumber + "' corresponde a Agosto");
+                Debug.Log("'" + _monthNumber + "' corresponde a Agosto");
                 break;
 
             case 9:
-                Debug.Log("'" + MonthNumber + "' corresponde a Septiembre");
+                Debug.Log("'" + _monthNumber + "' corresponde a Septiembre");
                 break;
 
             case 10:
-                Debug.Log("'" + MonthNumber + "' corresponde a Octubre");
+                Debug.Log("'" + _monthNumber + "' corresponde a Octubre");
                 break;
 
             case 11:
-                Debug.Log("'" + MonthNumber + "' corresponde a Noviembre");
+                Debug.Log("'" + _monthNumber + "' corresponde a Noviembre");
                 break;
 
             case 12:
-                Debug.Log("'" + MonthNumber + "' corresponde a Diciembre");
+                Debug.Log("'" + _monthNumber + "' corresponde a Diciembre");
                 break;
 
             default:
-                Debug.Log("'" + MonthNumber + "' no se corresponde con ningún mes del año.");
+                Debug.Log("'" + _monthNumber + "' no se corresponde con ningún mes del año.");
                 break;
         }
     }

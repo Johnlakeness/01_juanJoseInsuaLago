@@ -5,9 +5,10 @@ using UnityEngine;
 public class FromLargestToSmallest : MonoBehaviour
 {
     // Zona de variables globales
-    public int  NumberOne,
-                NumberTwo,
-                NumberThree;
+    [SerializeField]
+    private int _numberOne,
+                _numberTwo,
+                _numberThree;
 
     // Start is called before the first frame update
     void Start()
@@ -15,67 +16,68 @@ public class FromLargestToSmallest : MonoBehaviour
         IsDescendingNumber();
     }
 
+    // Método para determinar el orden descendiente
     private void IsDescendingNumber()
     {
         // Zona de variables locales
-        int numberSmallest = 0,
-            numberMiddle = 0,
-            numberLargest = 0;
+        int numberSmallest,
+            numberMiddle,
+            numberLargest;
 
-        // Vincular número a tamaño
-        if (NumberOne < NumberTwo && NumberOne < NumberThree)
+        // Determinar el número de mayor a menor
+        if (_numberOne < _numberTwo && _numberOne < _numberThree)
         {
-            numberSmallest = NumberOne;
+            numberSmallest = _numberOne;
 
-            if (NumberTwo < NumberThree)
+            if (_numberTwo < _numberThree)
             {
-                numberMiddle = NumberTwo;
-                numberLargest = NumberThree;
+                numberMiddle = _numberTwo;
+                numberLargest = _numberThree;
 
             }
 
             else
             {
-                numberMiddle = NumberThree;
-                numberLargest = NumberTwo;
+                numberMiddle = _numberThree;
+                numberLargest = _numberTwo;
             }
         }
 
-        else if (NumberTwo < NumberOne && NumberTwo < NumberThree)
+        else if (_numberTwo < _numberOne && _numberTwo < _numberThree)
         {
-            numberSmallest = NumberTwo;
+            numberSmallest = _numberTwo;
 
-            if (NumberOne < NumberThree)
+            if (_numberOne < _numberThree)
             {
-                numberMiddle = NumberOne;
-                numberLargest = NumberThree;
+                numberMiddle = _numberOne;
+                numberLargest = _numberThree;
             }
 
             else
             {
-                numberMiddle = NumberThree;
-                numberLargest = NumberOne;
+                numberMiddle = _numberThree;
+                numberLargest = _numberOne;
             }
         }
 
         else
         {
-            numberSmallest = NumberThree;
+            numberSmallest = _numberThree;
 
-            if (NumberTwo < NumberOne)
+            if (_numberTwo < _numberOne)
             {
-                numberMiddle = NumberTwo;
-                numberLargest = NumberOne;
+                numberMiddle = _numberTwo;
+                numberLargest = _numberOne;
             }
 
             else
             {
-                numberMiddle = NumberOne;
-                numberLargest = NumberTwo;
+                numberMiddle = _numberOne;
+                numberLargest = _numberTwo;
             }
         }
 
-        // Mostrar en consola orden de mayor a menor
+        // Mostrar en consola orden descendente
         Debug.Log("El orden descendiente de los números es: '" + numberLargest + "' , '" + numberMiddle + "' , '" + numberSmallest + "'.");
     }
 }

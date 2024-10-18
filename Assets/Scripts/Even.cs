@@ -7,22 +7,24 @@ public class Even : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetEvenNumbers0To100While();
+        GetEvenNumbers();
     }
 
-    private void GetEvenNumbers0To100While()
+    // Método para imprimir números pares del 0 al 100
+    private void GetEvenNumbers()
     {
-        // Variable de incremento
         int i = 0;
 
+        // Bucle "while" hasta 100
         while (i <= 100)
         {
             if (i % 2 == 0)
             {
-                // Mostrar en consola "Even"
+                // Mostrar en consola número par
                 Debug.Log(i);
             }
 
+            // Incrementar valor "i"
             i++;
         }
     }

@@ -5,9 +5,10 @@ using UnityEngine;
 public class DescendingOrder : MonoBehaviour
 {
     // Variables globales
-    public int  NumberOne,
-                NumberTwo,
-                NumberThree;
+    [SerializeField]
+    private int _numberOne,
+                _numberTwo,
+                _numberThree;
 
     // Start is called before the first frame update
     void Start()
@@ -15,18 +16,16 @@ public class DescendingOrder : MonoBehaviour
         IsDescendingOrder();
     }
 
-    // Método "Orden descendiente"
+    // Método para verificar si el orden de los números es descreciente
     private void IsDescendingOrder()
     {
-        if (NumberOne >= NumberTwo && NumberTwo >= NumberThree)
+        if (_numberOne >= _numberTwo && _numberTwo >= _numberThree)
         {
-            // Mostrar en consola "Descendiente"
             Debug.Log("El orden es descendiente.");
         }
 
         else
         {
-            // Mostar en consola "No descendiente"
             Debug.Log("El orden no es descendiente.");
         }
     }

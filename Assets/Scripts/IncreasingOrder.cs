@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class IncreasingOrder : MonoBehaviour
 {
-    // Zona de variables globales
-    public int  NumberOne,
-                NumberTwo, 
-                NumberThree;
+    // Variables globales
+    [SerializeField]
+    private int _numberOne,
+                _numberTwo, 
+                _numberThree;
 
     // Start is called before the first frame update
     void Start()
@@ -15,20 +16,20 @@ public class IncreasingOrder : MonoBehaviour
         IsIncreasingOrder();
     }
 
-    // Método Orden creciente
+    // Método para verificar si el orden es creciente
     private void IsIncreasingOrder()
     {
-        if(NumberOne <= NumberTwo && NumberTwo <= NumberThree)
+        if(_numberOne <= _numberTwo && _numberTwo <= _numberThree)
         {
             // Mostrar en consola "Creciente"
-            Debug.Log ("El orden es creciente.");
+            Debug.Log("El orden es creciente.");
          
         }
 
         else
         {
             // Monstrar en consola "No creciente"
-            Debug.Log ("El orden no es creciente.");
+            Debug.Log("El orden no es creciente.");
         }
     }
 }

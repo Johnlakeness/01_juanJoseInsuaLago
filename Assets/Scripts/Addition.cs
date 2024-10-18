@@ -5,25 +5,31 @@ using UnityEngine;
 public class Addition : MonoBehaviour
 {
     // Variables globales
-    public int numberBase;
+    [SerializeField]
+    private int _numberBase;
 
     // Start is called before the first frame update
     void Start()
     {
-        int result = GetAddition(numberBase);
-        Debug.Log ("La suma de los números del 1 al " + numberBase + " es: " + result);
+        // Sumar números del 1 al _numberBase
+        int result = CalculateAddition(_numberBase);
+
+        // Mostrar por consola
+        Debug.Log ("La suma de los números del 1 al " + _numberBase + " es: " + result);
     }
 
-    // Método "GetAddition"
-    private int GetAddition(int position)
+    // Método para sumar valores de 1 a "number"
+    private int CalculateAddition(int number)
     {
-        // Variables locales
         int addiction = 0;
 
-        for (int i = 1; i <= numberBase; i++)
+        // Bucle para acumular suma
+        for (int i = 1; i <= number; i++)
         {
-            addiction = addiction + i;
+            // Sumar valor actual de "i" a "addiction"
+            addiction += i;
         }
+        // Devolver resultado
         return addiction;
     }
 }
